@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RDDBH - Réveillon dos discípulos de Belo Horizonte</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Home do RDDBH - Réveillon dos discípulos de Belo Horizonte">
+    <meta name="author" content="Daniel Faiole">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Montserrat:400,700' %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Kaushan+Script' %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="page-top" class="index">
+    <%= yield %>
+  </body>
+</html>
