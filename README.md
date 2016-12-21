@@ -1,24 +1,14 @@
-# README
+# RDDBH Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the repository of the RDDBH - Réveillon dos discipulos de BH
 
-Things you may want to cover:
+### Pre-requisites
+* Ruby on Rails 5.0.1
+* Any Postgresql version
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Install locally
+1. Clone the repo
+https://github.com/danfaiole/rddbh-site.git
+2. Run `bundle install`
+3. Run `rake db:create`
+4. Run `rails s` to execute the website locally
