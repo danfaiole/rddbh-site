@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :city, null: false, limit: 255, index: true
       t.string :state, null: false, limit: 2
       t.string :leader_phone, null: false, limit: 12
-      t.string :password_digest
 
       t.timestamps
     end
