@@ -380,6 +380,7 @@
                           'validation-required-message': 'Por favor digite seu nome'
                         }
                       %>
+                      <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
                       <%= f.text_field :last_name, 
@@ -390,6 +391,7 @@
                           'validation-required-message': 'Por favor digite seu sobrenome'
                         }
                       %>
+                      <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
                       <%= f.text_field :email, 
@@ -400,18 +402,35 @@
                           'validation-required-message': 'Por favor digite seu e-mail'
                         } 
                       %>
+                      <p class="help-block text-danger"></p>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <%= f.text_field :city, class: 'form-control', placeholder: 'Cidade' %>
+                      <%= f.text_field :city, 
+                        class: 'form-control', 
+                        placeholder: 'Cidade',
+                        required: true,
+                        data: {
+                          'validation-required-message': 'Por favor digite a cidade'
+                        } 
+                      %>
+                      <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
-                      <%= f.text_field :state, class: 'form-control', placeholder: 'Estado' %>
+                      <%= f.text_field :state, 
+                        class: 'form-control', 
+                        placeholder: 'Estado',
+                        required: true,
+                        data: {
+                          'validation-required-message': 'Por favor digite o Estado'
+                        } 
+                      %>
+                      <p class="help-block text-danger"></p>                      
                     </div>
                   </div>
                   <div id="success"></div>
-                  <button type="submit" class="btn btn-xl">Send Message</button>
+                  <button type="submit" class="btn btn-xl">Cadastrar</button>
                 </div>
               <% end %>
                 <!-- <form name="sentMessage" id="contactForm" novalidate>

@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true, length: { is: 2 }
   validates :leader_phone, presence: true
-  validates :password, confirmation: true
+  #validates :password, confirmation: true
 end
