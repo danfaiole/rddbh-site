@@ -30,17 +30,18 @@ $(document).on('turbolinks:load', function(){
   })
 
   // Validations
-  $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+  $("#new_user input,#new_user textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
+            var url = $form.attr('action');
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
+            var name = $("#user_name").val();
+            var email = $("#user_email").val();
+            var last_name = $("#user_last_name").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -48,11 +49,11 @@ $(document).on('turbolinks:load', function(){
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: url,
                 type: "POST",
                 data: {
                     name: name,
-                    phone: phone,
+                    last_name: last_name,
                     email: email,
                     message: message
                 },
