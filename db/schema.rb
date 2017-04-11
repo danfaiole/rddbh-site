@@ -10,25 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222132336) do
+ActiveRecord::Schema.define(version: 20170408215410) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "user_workshops", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "workshop_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_workshops_on_user_id"
+    t.index ["workshop_id"], name: "index_user_workshops_on_workshop_id"
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255, null: false
-    t.string   "last_name",       limit: 255, null: false
-    t.date     "birthday",                    null: false
-    t.string   "email",           limit: 255, null: false
-    t.string   "leader",          limit: 255, null: false
-    t.string   "city",            limit: 255, null: false
-    t.string   "state",           limit: 2,   null: false
-    t.string   "leader_phone",    limit: 12,  null: false
-    t.string   "password_digest"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.index ["city"], name: "index_users_on_city", using: :btree
-    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.string   "name",         limit: 255, null: false
+    t.string   "last_name",    limit: 255, null: false
+    t.date     "birthday",                 null: false
+    t.string   "email",        limit: 255, null: false
+    t.string   "leader",       limit: 255, null: false
+    t.string   "city",         limit: 255, null: false
+    t.string   "state",        limit: 2,   null: false
+    t.string   "leader_phone", limit: 12,  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["city"], name: "index_users_on_city"
+    t.index ["email"], name: "index_users_on_email"
+  end
+
+  create_table "workshops", force: :cascade do |t|
+    t.string   "name"
+    t.time     "day"
+    t.time     "hour"
+    t.integer  "vacancies"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

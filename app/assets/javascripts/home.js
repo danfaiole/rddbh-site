@@ -52,10 +52,12 @@ $(document).on('turbolinks:load', function(){
                 url: url,
                 type: "POST",
                 data: {
-                    name: name,
-                    last_name: last_name,
-                    email: email,
-                    message: message
+                        user: { 
+                                name: name,
+                                last_name: last_name,
+                                email: email,
+                                message: message
+                              }
                 },
                 cache: false,
                 success: function() {
