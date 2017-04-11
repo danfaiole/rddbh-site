@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20170408215410) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "user_workshops", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "workshop_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_user_workshops_on_user_id"
-    t.index ["workshop_id"], name: "index_user_workshops_on_workshop_id"
+    t.index ["user_id"], name: "index_user_workshops_on_user_id", using: :btree
+    t.index ["workshop_id"], name: "index_user_workshops_on_workshop_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 20170408215410) do
     t.string   "leader_phone", limit: 12,  null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["city"], name: "index_users_on_city"
-    t.index ["email"], name: "index_users_on_email"
+    t.index ["city"], name: "index_users_on_city", using: :btree
+    t.index ["email"], name: "index_users_on_email", using: :btree
   end
 
   create_table "workshops", force: :cascade do |t|
@@ -45,4 +48,6 @@ ActiveRecord::Schema.define(version: 20170408215410) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "user_workshops", "users"
+  add_foreign_key "user_workshops", "workshops"
 end
